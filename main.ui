@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>654</width>
+    <height>682</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>YOLOV3可视化训练系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>611</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>设置路径</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>VOC2007格式路径</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>YOLOV3配置路径</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="voc_path">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="yolo_path">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>./yolov3_train</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="vocSetup">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>25</y>
+       <width>93</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="yoloSetup">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>70</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>611</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>训练、验证和测试样本比例</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>训练样本比例</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>验证样本比例</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>110</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>测试样本比例</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="train_coef">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.9</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="val_coef">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.05</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="test_coef">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>110</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.05</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>611</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>训练参数及训练步骤</string>
+    </property>
+    <widget class="QPushButton" name="format_convert">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>200</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>VOC格式转换</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="config_generate">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>200</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>配置文件生成</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="train_yolo">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>200</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>训练YOLOV3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="train_allstep">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>270</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>一键训练</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>23</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>批大小</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="test_oneimage">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>270</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>测试单幅图像</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="compute_mAP">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>270</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>计算mAP</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="trainsetSetup">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>200</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>切分数据集</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="stopTrain">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>270</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>结束训练</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>89</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>测试集</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>121</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>图像文件后缀</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="test_type">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>85</y>
+       <width>331</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>train</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>val</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>test</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="image_postfix">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>120</y>
+       <width>331</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>.jpg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.jpeg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.bmp</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.png</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.tif</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.tiff</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>57</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>测试阈值</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="test_thresh">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>52</y>
+       <width>331</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0.25</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>160</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>YOLO模型</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="modelType">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>160</y>
+       <width>331</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>3层模型</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4层模型</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5层模型</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSpinBox" name="batchsize">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>331</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>4</number>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>654</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
